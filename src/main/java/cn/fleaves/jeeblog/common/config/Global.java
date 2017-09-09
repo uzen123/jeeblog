@@ -36,7 +36,7 @@ public class Global {
 	
 	/**
 	 * 获取配置
-	 * @see ${fns:getConfig('adminPath')}
+	 * @see ${fns:getConfig('productName')}
 	 */
 	public static String getConfig(String key){
 		String value = map.get(key);
@@ -45,5 +45,12 @@ public class Global {
 			map.put(key, value != null ? value : StringUtils.EMPTY);
 		}
 		return value;
+	}
+	
+	/**
+	 * 获取前台根路径
+	 */
+	public static String getFrontPath() {
+		return getConfig("frontPath");
 	}
 }

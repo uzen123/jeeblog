@@ -128,14 +128,14 @@ public class PropertiesLoader {
 		Properties props = new Properties();
 		
 		for(String location:resourcesPaths){
-			logger.debug("正在载入"+location+"文件");
+			logger.debug("正在加载"+location+"文件");
 			InputStream is = null;
 			try {
 				Resource resource = resourceLoader.getResource(location);
 				is = resource.getInputStream();
 				props.load(is);
 			} catch (IOException ex) {
-				logger.info("无法加载properties来自文件路径:" + location + ", " + ex.getMessage());
+				logger.info("无法加载" + location + "文件, " + ex.getMessage());
 			} finally {
 				IOUtils.closeQuietly(is);
 			}
